@@ -6,6 +6,9 @@
   "scripts": {
     "test": "jest"
   },
+  "standard": {
+    "env": ["jest"]
+  },
   "lint-staged": {
     "*.js": [
       "standard --fix",
