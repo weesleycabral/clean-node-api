@@ -4,11 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "lint-stage": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "standard": "^14.3.4"
+    "husky": "^4.0.0-beta.5"
+  },
+  "dependencies": {
+    "lint-staged": "^9.4.3",
+    "standard": "^14.3.1"
   }
 }
