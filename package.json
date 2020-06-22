@@ -8,7 +8,9 @@
     "test:staged": "jest"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -26,6 +28,7 @@
   "license": "ISC",
   "devDependencies": {
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
   },
