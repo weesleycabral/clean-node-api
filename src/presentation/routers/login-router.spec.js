@@ -17,7 +17,7 @@ const makeSut = () => {
 }
 
 describe('Login Router', () => {
-  test('Should return 400 if no email provided', () => {
+  test('Should return 400 if no email provided', () => { // Verificando se foi fornecido email
     const { sut } = makeSut()
     const httpRequest = {
       body: {
@@ -29,7 +29,7 @@ describe('Login Router', () => {
     expect(httpResponse.body).toEqual(new MissingParamError('email'))
   })
 
-  test('Should return 400 if no password provided', () => {
+  test('Should return 400 if no password provided', () => { // Verificando senha
     const { sut } = makeSut()
     const httpRequest = {
       body: {
@@ -67,6 +67,8 @@ describe('Login Router', () => {
     expect(authUseCaseSpy.password).toBe(httpRequest.body.password)
   })
 
+  // Diferença do 401 pro 403 , 401: o sistema nao sabe quem eh, nao esta registrado
+  // 403: o sistema sabe quem eh mas o usuario nao tem permissao para realizar a ação
   test('Should return 401 when invalid credentials are provided', () => {
     const { sut } = makeSut()
     const httpRequest = {
